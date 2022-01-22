@@ -36,6 +36,8 @@ public:
             }
             res[i]=mn+1;
         }
+      for(int i=0;i<n;i++){cout<<res[i]<<" ";}
+
         return res[n-1];
         
     }
