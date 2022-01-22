@@ -13,7 +13,7 @@ public:
             res+=s[i];
          
         }
-        if(i==sp[sp.size()-1]){res+=' ';}
+        
     return res;
     }
 };
