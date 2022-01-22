@@ -7,10 +7,10 @@ public:
       
         for(int i=0;i<s.size();i++)
         {
-            if(k<sp.size()&&i==sp[k]){res+=' ';
+            if(k<sp.size()&&i==sp[k]){res.push_back(' ');
              k++;
             }
-            res+=s[i];
+            res.push_back(s[i]);
          
         }
         
