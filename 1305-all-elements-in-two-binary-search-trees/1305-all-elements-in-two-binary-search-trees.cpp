@@ -24,7 +24,7 @@ public:
      {
           print(root1);
           print(root2);
-          sort(begin(res), end(res));
+          sort(res.begin(), res.end());
           return res;
      }
 };
