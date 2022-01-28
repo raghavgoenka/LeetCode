@@ -2,7 +2,7 @@ class Solution {
 public:
       bool isValid(vector<vector<char>>& board,int r,int col,char c)
     {
-          
+          board[r][col]='.';
         
         for(int i=0;i<9;i++)
         {
@@ -21,13 +21,11 @@ public:
         for(int i=0;i<9;i++)
         {
             for(int j=0;j<9;j++)
-            {
+            { 
                 if(board[i][j]!='.')
                 {
-                    char c=board[i][j];
-                    board[i][j]='.';
-                    bool flag=isValid(board,i,j,c);
-                        if(flag==0)
+                    
+                        if(isValid(board,i,j,board[i][j])==0)
                         {
                             
                             return false;
