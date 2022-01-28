@@ -7,11 +7,9 @@ public:
         
         for(int i=0;i<9;i++)
         {
-            if(board[r][i]==c){return false;}
+            if(board[r][i]==c || board[i][col]==c||board[3*(r/3)+i/3][3*(col/3)+i%3]==c){return false;}
             
-            if(board[i][col]==c){return false;}
-            
-            if(board[3*(r/3)+i/3][3*(col/3)+i%3]==c){return false;}
+          
         }
         return true;
         
