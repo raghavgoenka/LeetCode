@@ -1,11 +1,11 @@
 class Solution {
 public:
     bool checkValid(vector<vector<int>>& m) {
-        
-        for(int i=0;i<m.size();i++)
+        int n=m.size(); 
+        for(int i=0;i<n;i++)
         {
-            map<int,int>mp,mp1;
-            for(int j=0;j<m[0].size();j++)
+            int mp[101]={0},mp1[101]={0};
+            for(int j=0;j<n;j++)
             {
                 mp[m[j][i]]++;
                 mp1[m[i][j]]++;
