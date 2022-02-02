@@ -31,7 +31,7 @@ public:
                 a[s[j] - 'a']--;
                 j++;
             }
-            if((i-j)+1==n1&&match(a,b, p))
+            if(match(a,b, p))
             {v.push_back(j);
              }
 
