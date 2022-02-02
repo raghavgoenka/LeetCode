@@ -1,42 +1,37 @@
 class Solution {
 public:
-    int n,n1;
-
-    bool match(int a[],int b[],string p)
-    {
-        for(int i=0;i<n1;i++)
-        {  
-            if(b[p[i]-'a']!=a[p[i]-'a']||(b[p[i]-'a']==0&&a[p[i]-'a']==0)){return false;}
-        }
-        return true;
-    }
     vector<int> findAnagrams(string s, string p) {
-        int a[26]={0},b[26]={0};
-        vector<int>v;
-        n=s.size(),n1=p.size();
-        if(n1>n){return v;}
         
-        for(int i=0;i<n1;i++)
-        {
-           b[p[i]-'a']++;
-        }
+        if(s.size() < p.size()) return {};
         
-        int i=0,j=0;
-        while(i<n)
+        vector<int>ans;
+        
+        vector<int>freq(26, 0), mp(26,0);
+        for(auto ch : p)
+            freq[ch - 'a']++;
+        
+        int j = 0;
+        for(int i = 0; i < s.size(); i++)
         {
-           
-            a[s[i]-'a']++;
-             while(a[s[i] - 'a'] > b[s[i] - 'a'])
+            mp[s[i] - 'a']++;
+            while(mp[s[i] - 'a'] > freq[s[i] - 'a'])
             {
-                a[s[j] - 'a']--;
+                mp[s[j] - 'a']--;
                 j++;
             }
-            if(match(a,b, p))
-            {v.push_back(j);
-             }
-
-            i++;
+            bool possible = true;
+            for(int i = 0; i < 26; i++)
+            {
+                if(mp[i] != freq[i]) 
+                {
+                    possible = false;
+                    break;
+                }
+            }
+            if(possible)
+                ans.push_back(j);
         }
-        return v;
+        
+        return ans;
     }
 };
