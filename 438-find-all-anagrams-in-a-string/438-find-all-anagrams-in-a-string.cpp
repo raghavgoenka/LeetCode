@@ -32,9 +32,6 @@ public:
             if((i-j)+1==n1)
             {a[s[j]-'a']--;                           
             j++;}
-            
-            
-            
             i++;
         }
         return v;
