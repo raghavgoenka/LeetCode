@@ -34,9 +34,7 @@ public:
             if((i-j)+1==n1&&match(a,b, p))
             {v.push_back(j);
              }
-            if((i-j)+1==n1)
-            {a[s[j]-'a']--;                           
-            j++;}
+
             i++;
         }
         return v;
