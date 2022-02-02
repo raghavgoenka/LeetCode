@@ -26,6 +26,11 @@ public:
         {
            
             a[s[i]-'a']++;
+             while(a[s[i] - 'a'] > b[s[i] - 'a'])
+            {
+                a[s[j] - 'a']--;
+                j++;
+            }
             if((i-j)+1==n1&&match(a,b, p))
             {v.push_back(j);
              }
