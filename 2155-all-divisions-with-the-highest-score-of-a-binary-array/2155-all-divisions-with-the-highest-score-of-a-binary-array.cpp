@@ -1,13 +1,13 @@
 class Solution {
 public:
     vector<int> maxScoreIndices(vector<int>& arr) {
-        map<int,vector<int>>mp;
+        
         int res=INT_MIN,one=0,n=arr.size(),zero=0;
         for(int i =0;i<n;i++)
         {
             if(arr[i]==1){one++;}
         }
-        
+        vector<int>mp[2*n];
         mp[one].push_back(0);
         res=one;
         int sum=0;
