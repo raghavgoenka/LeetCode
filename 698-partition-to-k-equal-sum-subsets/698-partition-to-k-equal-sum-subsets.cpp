@@ -1,29 +1,24 @@
 class Solution {
 public:
-     bool recc(vector<int>& nums, vector<int>& vis, int idx,int curr_sum, int sum,int bucket)
+    bool partition(vector<int>& arr,vector<int>& vis,int i,int k,int cur,int sum)
     {
        
-        if(bucket==0)
-            return true;
-      
-        if(curr_sum==sum)
+        if(k==0){ return true;}
+       
+        if(cur==sum)
         {
-            return recc(nums, vis,0,0, sum,bucket-1);
+            return partition(arr,vis,0,k-1,0,sum);
         }
-        for(int i=idx;i<nums.size();i++)
+        
+        
+        for(int p=i;p<arr.size();p++)
         {
-            if((i>0 && nums[i]==nums[i-1] && vis[i-1]==-1)|| curr_sum+nums[i]>sum || vis[i]==1 )
-               continue;
+            if((p>0 && arr[p]==arr[p-1] && vis[p-1]==0)|| cur+arr[p]>sum || vis[p]==1 )
+            {continue;}
             
-               
-                vis[i]=1;
-            
-                if(recc(nums,vis,i+1, curr_sum+nums[i],sum, bucket))
-                    return true;
-            
-        
-                vis[i]= -1;
-        
+            vis[p]=1;
+            if(partition(arr,vis,p+1,k,cur+arr[p],sum)){return true;}
+            vis[p]=0;
         }
         return false;
     }
@@ -40,7 +35,7 @@ public:
         int n= nums.size();
         vector<int>vis(n,-1);
      sort(nums.begin(),nums.end());
-      return  recc(nums,vis,0,0,sum/k,k );
+      return  partition(nums,vis,0,k,0,sum/k );
     }
 };
 
