@@ -22,20 +22,16 @@ public:
         }
         return false;
     }
-    bool canPartitionKSubsets(vector<int>& nums, int k) {
-        int sum = 0;
-        for(auto it: nums)
-        {
-            sum +=  it;
-        }
-        
-        if(sum%k)
-            return false;
-        
-        int n= nums.size();
-        vector<int>vis(n,-1);
-     sort(nums.begin(),nums.end());
-      return  partition(nums,vis,0,k,0,sum/k );
+    bool canPartitionKSubsets(vector<int>& arr, int k) {
+       int n=arr.size();
+        if(n<k){return false;}
+        if(k==1){return true;}
+        int sum=0;
+        for(int i=0;i<n;i++){sum+=arr[i];}
+        if(sum%k!=0){return false;}
+        vector<int>vis(n,0);
+        sort(arr.begin(),arr.end());
+        return partition(arr,vis,0,k,0,sum/k);
     }
 };
 
