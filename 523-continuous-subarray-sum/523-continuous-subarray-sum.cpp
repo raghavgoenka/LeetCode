@@ -1,9 +1,11 @@
 class Solution {
 public:
     bool checkSubarraySum(vector<int>& nums, int k) {
-        int n=nums.size() ,res=0,sum=0;
+        int n=nums.size(),sum=0;
         unordered_map<int,int>mp;
+        
         if(n==1){return false;}
+        
         if((nums[0]+nums[1])%k==0){return true;}
    
         mp[0]=-1;
