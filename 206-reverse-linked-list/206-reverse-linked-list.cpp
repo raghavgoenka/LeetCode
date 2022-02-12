@@ -15,9 +15,9 @@ public:
         
         while(temp!=NULL)
         {
+            
             cur=temp->next;
             temp->next=prev;
-            // temp->next->next=prev;
             prev=temp;
             temp=cur;
             
