@@ -10,16 +10,12 @@ public:
                  if(c>=t){return true;}
             }
        
-        
-        
-        
-        return false;
+         return false;
     }
     long long minimumTime(vector<int>& time, int totalTrips) {
         
-        long long a=time[time.size()-1];
-        long long b=totalTrips;
-        long long low=1,high=a*b;
+        
+        long long low=1,high=1e14;
         while(low<=high)
         {
             long long mid=low+(high-low)/2;
