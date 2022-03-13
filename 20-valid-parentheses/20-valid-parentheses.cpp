@@ -10,7 +10,7 @@ public:
             {
                 
                 char p=st.top();
-                cout<<p<<" ";
+               
                 if(i==')'&&p!='('){return false;}
                 else if(i=='}'&&p!='{'){return false;}
                 else if(i==']'&&p!='['){return false;}
