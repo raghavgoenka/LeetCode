@@ -4,6 +4,7 @@ public:
         stack<string>s;
         string t="";
         int n=path.size();
+        if(path[n-1]!='/'){path.push_back('/');n+=1;}
         
         for(int i=0;i<n;i++)
         {
@@ -27,15 +28,7 @@ public:
             }
             
         }
-         if(t.size()>0){
-                if(t[0]=='.')
-                {
-                    if(t.size()==2&&!s.empty()){s.pop();}
-                    else if(t.size()>2){s.push(t);}
-                  
-                }
-                else{s.push(t);}
-        }
+         
         string res;
         while(!s.empty())
         {
