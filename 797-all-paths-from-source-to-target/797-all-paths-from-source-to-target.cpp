@@ -10,14 +10,14 @@ public:
       temp.push_back(s);
       if(s==d){
           res.push_back(temp);
-          return ;
+          
           }
       for(auto it:adj[s])
       { 
          dfs(adj,it,d);
-           temp.pop_back();
+           
       }
-     
+     temp.pop_back();
       return ;
       
     }
@@ -33,12 +33,7 @@ public:
           temp.clear();
          
         }
-        cout<<endl;
-        for(int i=0;i<res.size();i++)
-        {
-            for(int j=0;j<res[i].size();j++){cout<<res[i][j]<<" ";}
-            cout<<endl;
-        }
+      
         
         return res;
     }
