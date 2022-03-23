@@ -17,7 +17,7 @@ public:
         while(n<t){        
             n=n*2;c++;}
         cout<<n<<" ";
-if(n%2==0&&t%2!=0){c++;}
+    if(n%2==0&&t%2!=0){c++;}
         if(s>t){return min(c,s-t);}
         return c;
         
