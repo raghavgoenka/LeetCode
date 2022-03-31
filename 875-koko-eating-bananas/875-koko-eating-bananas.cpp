@@ -24,7 +24,7 @@ public:
             sum += piles[i];
             mx = max(mx, piles[i]);
         }
-        int l = sum / H, r = mx, ans;
+        int l = ceil(sum / H), r = mx, ans;
         while(l < r)
         {
             int mid = l + (r - l) / 2;
