@@ -15,23 +15,22 @@ public:
         
         if(root==NULL){return -1;}
       
-        queue<pair<TreeNode*,pair<int,int>>>q;
-        q.push({root,{0,0}});
+        queue<pair<TreeNode*,int>>q;
+        q.push({root,0});
           int res,mx=INT_MIN;
         while(!q.empty())
         {
             auto i=q.front();
             q.pop();
             TreeNode* temp=i.first;
-            int x=i.second.first;
-            int level=i.second.second;
+           
+            int level=i.second;
             if(level>mx){mx=level;res=temp->val;}
           
-            if(temp->left){q.push({temp->left,{x-1,level+1}});}
-            if(temp->right){q.push({temp->right,{x+1,level+1}});}
+            if(temp->left){q.push({temp->left,level+1});}
+            if(temp->right){q.push({temp->right,level+1});}
         }
       
-        // for(auto i:mp){if(i.second.second>mx){mx=i.second.second;res=i.second.first;}}
         
         return res;
     }
