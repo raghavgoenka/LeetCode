@@ -24,11 +24,7 @@ public:
         path.pop_back();
         if(path.size()>1)
         {path.pop_back();}
-        
-
-        
-        
-    }
+        }
     vector<string> binaryTreePaths(TreeNode* root) {
         if(root==NULL){return res;}
         string temp="";
