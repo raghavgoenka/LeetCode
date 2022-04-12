@@ -6,7 +6,7 @@ public:
         vector<int>col = {j, j, j + 1, j - 1};
         for(int k = 0; k < 4; k++){
             if(row[k] < n && col[k] < m && row[k] >= 0 && col[k] >= 0 
-                && M[row[k]][col[k]] == 0){
+                && M[row[k]][col[k]]==0){
                  dfs(M, n, m, row[k], col[k]);
             }
         }
