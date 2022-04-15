@@ -29,19 +29,20 @@ public:
             }
         }
     }
-    vector<int> distanceK(TreeNode* root, TreeNode* target, int k){
-        map<TreeNode*,TreeNode*>par;
+    vector<int> distanceK(TreeNode* root, TreeNode* target, int k) {
+                map<TreeNode*,TreeNode*>par;
         getParent(root,par);
         
         map<TreeNode*,bool>vis;
          queue<TreeNode*>q;
+
         vector<int>res;
         q.push(target);
         vis[target]=true;
         
         while(!q.empty())
         {
-            if(k-- ==0){break;}
+            if(k--==0){break;}
             int s=q.size();
             for(int i=0;i<s;i++)
             {
