@@ -20,7 +20,7 @@ public:
         grandParent(root->right,root->val,parent);
     }
     int sumEvenGrandparent(TreeNode* root) {
-       grandParent(root,1,1);
+       grandParent(root,-1,-1);
         return sum;
     }
 };
