@@ -11,25 +11,26 @@
  */
 class Solution {
 public:
-    vector<TreeNode*>v;
-    void solve(TreeNode*root)
+    TreeNode*a=NULL,*b=NULL,*prev;
+    void solve(TreeNode*root,long int lb,long int rb)
     {
+          
         if(root==NULL){return;}
-        solve(root->left);
-        v.push_back(root);
-        solve(root->right);
+       
+       
+        solve(root->left,lb,root->val);
+         if(prev!=NULL&&(prev->val>root->val)){
+          
+            if(a==NULL){a=prev;b=root;}
+            else {b=root;}
+          }
+        prev=root;
+        solve(root->right,root->val,rb);
     }
     void recoverTree(TreeNode* root) {
-        solve(root);
-       
-        for(int i=0;i<v.size()-1;i++)
-        {
-            for(int j=i+1;j<v.size();j++)
-            {  
-            if(v[i]->val>v[j]->val){swap(v[i]->val,v[j]->val);}
-           }
-        }
-        
+        solve(root,LONG_MIN,LONG_MAX);
+     
+        swap(a->val,b->val);
         
     }
 };
