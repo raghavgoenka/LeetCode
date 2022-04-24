@@ -13,7 +13,7 @@ class Solution {
 public:
     TreeNode* buildTree(vector<int>nums,int l,int r)
     {   
-        cout<<l<<" "<<r<<endl;
+        
         if(l>r){return NULL;}
        
         
