@@ -3,8 +3,8 @@ public:
     map<int,pair<string,double>>in;
     map<string,pair<double,double>>time;
     UndergroundSystem() {
-        in.clear();
-        time.clear();
+        // in.clear();
+        // time.clear();
     }
     
     void checkIn(int id, string stationName, int t) {
@@ -12,14 +12,10 @@ public:
     }
     
     void checkOut(int id, string stationName, int t) {
-        double a=in[id].second;    
-        string s=in[id].first;
-        s=s+"->"+stationName;
-        double b=t;
-        b=b-a;
-       double d=time[s].first,t1=time[s].second;
-        d+=b;t1++;
-        time[s]={d,t1};
+        double a=t-in[id].second;    
+        string s=in[id].first+"->"+stationName;
+        a+=time[s].first;double t1=time[s].second+1;
+        time[s]={a,t1};
             
         
     }
