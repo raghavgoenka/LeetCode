@@ -1,7 +1,7 @@
 class Solution {
 public:
    
-    int bfs(vector<vector<int>>heights,int k)
+    int bfs(vector<vector<int>>&heights,int &k)
     {
        queue<pair<int,int>>q;
         int n=heights.size(),m=heights[0].size();
