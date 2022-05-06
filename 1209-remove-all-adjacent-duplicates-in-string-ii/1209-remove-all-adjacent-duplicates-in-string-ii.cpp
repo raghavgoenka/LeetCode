@@ -13,8 +13,9 @@ public:
            
            if(!st.empty()&&s[i]==s[st.top()]){mp[i]=mp[st.top()]+1;}
             st.push(i);
+            // cout<<s[i]<<" "<<mp[i]<<" "<<endl;
             if(mp[st.top()]==k-1)
-            {
+            {  
                 int p=k;
                 while(p--){st.pop();}
             }
