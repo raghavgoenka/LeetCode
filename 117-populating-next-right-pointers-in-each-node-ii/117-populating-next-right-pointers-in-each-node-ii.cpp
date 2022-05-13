@@ -24,7 +24,7 @@ public:
        {
             Node* dummy=new  Node(0); //dummy node 
            //created at every level to traverse though nextRight pointer
-           
+           //basically creating a linked list at every node to traverse the other level
            Node*temp=dummy;
            while(cur!=NULL)
            {
