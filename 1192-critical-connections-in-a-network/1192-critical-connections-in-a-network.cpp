@@ -22,11 +22,8 @@ public:
              //forward edge
 	         dfs(adj,i,node);
 	         if(low[i]>in[node])
-	         {
-	             
-                 v.push_back({i,node});
-                 
-	         }
+	         {  v.push_back({i,node});
+                }
 	         low[node]=min(low[node],low[i]);
 	     }
 	 }
